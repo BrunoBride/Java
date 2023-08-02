@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import br.com.bytebank.banco.modelo.Conta;
+
 class Programa {
     public static void main(String[] args) {
         Aula aulaIntro = new Aula("Introdução às Coleções", 20);
@@ -15,7 +17,8 @@ class Programa {
         aulas.add(aulaModelando);
         aulas.add(aulaSets);
 
-        Collections.sort(aulas);
+        //Collections.sort(aulas); 
+        //A interface Comparable exige uma implementação do método compareTo, que precisa ser chamado pelo algoritmo interno do método sort() da lista.
 
         for (Aula aula : aulas) {
             System.out.println(aula);
@@ -52,4 +55,6 @@ class Aula {
     public String toString() {
         return "[título: " + titulo + ", tempo: " + tempo + " minutos]";
     }
+    
+    
 }
