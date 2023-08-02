@@ -48,9 +48,11 @@ public class Teste {
 		}
 
 		NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-		TitularDaContaComparator titularComparator = new TitularDaContaComparator();
-		lista.sort(titularComparator);
-
+//		TitularDaContaComparator titularComparator = new TitularDaContaComparator();
+//		lista.sort(titularComparator);
+//removeu a parte de cima e passou para forma enxuta abaixo:
+		lista.sort(new TitularDaContaComparator());
+		
 		System.out.println("-----------------");
 
 		for (Conta conta : lista) {
@@ -73,9 +75,9 @@ class NumeroDaContaComparator implements Comparator<Conta> {
 
 	@Override
 	public int compare(Conta c1, Conta c2) {
-return Integer.compare(c1.getNumero(), c2.getNumero());
+return Integer.compare(c1.getNumero(), c2.getNumero()); // nova mais encutada ainda.
 		
-//		return c1.getNumero() - c2.getNumero();
+//		return c1.getNumero() - c2.getNumero(); //passou para essa forma mais enxuta ao inves da parte comentada abaixo;
 		
 //		if (c1.getNumero() < c2.getNumero()) {
 //			return -1;
